@@ -19,9 +19,17 @@ public class Voiture {
     private String model;
     private Long id_client;
 
-    @Transient
     @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client client;
+
+    public Voiture(Long id, String marque, String matricule, String model, Client client) {
+        this.id=id;
+        this.marque=marque;
+        this.matricule=matricule;
+        this.model=model;
+        this.client=client;
+    }
 }
 
 
